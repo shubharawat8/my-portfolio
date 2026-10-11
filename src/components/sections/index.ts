@@ -1,0 +1,10 @@
+export { About } from "./About";
+export { Competencies } from "./Competencies";
+export { Contact } from "./Contact";
+export { Education } from "./Education";
+export { Experience } from "./Experience";
+export { FocusAreas } from "./FocusAreas";
+export { Hero } from "./Hero";
+export { Programmes } from "./Programmes";
+export { Stats } from "./Stats";
+export { TrainingResearch } from "./TrainingResearch";
