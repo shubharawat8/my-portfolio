@@ -1,6 +1,6 @@
 import { Layers } from "lucide-react";
 import { programmes } from "@/data/profile";
-import { Carousel, Chip, ClayCard, IconBubble, Section, SectionHeading } from "@/components/ui";
+import { Carousel, Chip, ClayCard, IconBubble, OrgLogo, Section, SectionHeading } from "@/components/ui";
 
 export function Programmes() {
   return (
@@ -20,6 +20,12 @@ export function Programmes() {
             </div>
             <h3 className="mt-6 font-display text-xl font-semibold leading-snug">{p.title}</h3>
             <p className="mt-3 text-sm leading-relaxed text-muted">{p.description}</p>
+            {p.partner && (
+              <p className="mt-auto flex items-center gap-2 pt-5 text-xs font-bold uppercase tracking-wider text-muted">
+                <OrgLogo src={p.partner.logo} name={p.partner.name} size="xs" />
+                Supported with {p.partner.name}
+              </p>
+            )}
           </ClayCard>
         ))}
       </Carousel>

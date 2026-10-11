@@ -28,6 +28,9 @@ src/
     layout/           # Navbar, Footer, ThemeProvider, BackgroundBlobs
     sections/         # one file per page section
   data/profile.ts     # ALL content
+public/
+  images/shubha-rawat.webp  # background-removed portrait
+  logos/unicef.png          # organisation logo
   lib/utils.ts        # cn()
 memory-bank/          # project docs (this folder)
 ```

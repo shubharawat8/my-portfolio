@@ -15,6 +15,7 @@ Single source of truth for every word on the site. Components import named expor
 | `training` | `{ masterTrainer[], facilitated[] }` | TrainingResearch |
 | `research` | list | TrainingResearch |
 | `education`, `certifications`, `certificationIcon` | lists | Education |
+| `UNICEF_LOGO`, `PROFILE_PHOTO` | `/public` asset paths | Hero, Experience, Programmes |
 | `navLinks` | `{ href, label }[]` | Navbar |
 
 ## Conventions
@@ -22,6 +23,11 @@ Single source of truth for every word on the site. Components import named expor
 - Icons are lucide components stored directly in data.
 - Keep claims faithful to the CV. If you add a number, it must be verifiable.
 - To show the phone number, set `profile.showPhone = true`.
+
+## Images & logos
+- Profile photo: `public/images/shubha-rawat.webp` — background removed (rembg `u2net_human_seg` + alpha matting), trimmed, 900px wide, transparent WebP. Replace the file to change the portrait.
+- Organisation logos live in `public/logos/`. Set `logo` on an `Experience` or `partner: { name, logo }` on a `Programme` to show them.
+- Only add logos for organisations Shubha actually worked with/for.
 
 ## Adding a new job
 Prepend an object to `experience` (newest first); move `current: true` to it.

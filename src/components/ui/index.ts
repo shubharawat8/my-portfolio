@@ -10,3 +10,4 @@ export { ThemeToggle } from "./ThemeToggle";
 export { accentBg, accentText } from "./accent";
 export { Carousel } from "./Carousel";
 export { CopyEmailButton } from "./CopyEmailButton";
+export { OrgLogo } from "./OrgLogo";

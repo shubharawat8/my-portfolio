@@ -13,6 +13,7 @@
 | `Reveal` | client | `delay?` | IntersectionObserver fade-up, once |
 | `Marquee` | server | `label`, `reverse?`, `duration?` | CSS infinite ticker |
 | `Carousel` | client | `label`, `speed?`, `slideClassName?` | Embla + AutoScroll |
+| `OrgLogo` | server | `src`, `name`, `size` xs/sm/md | Logo on a white clay tile (white in both themes) |
 | `ThemeToggle` | client | `className?` | next-themes |
 | `CopyEmailButton` | client | `email` | Clipboard + live region |
 | `accentBg` / `accentText` | util | — | Static accent class maps |

@@ -3,6 +3,19 @@
 All notable changes to this project are documented here.
 Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) · Versioning: [SemVer](https://semver.org/).
 
+## [1.1.0] — 2026-10-11
+
+### Added
+- Profile photo with background removed (`public/images/shubha-rawat.webp`, transparent WebP) shown as a cut-out portrait in the Hero — head rises above the clay card.
+- UNICEF logo (`public/logos/unicef.png`) and reusable `OrgLogo` UI component (white clay tile, stays white in dark mode).
+- Hero "current role" badge with UNICEF logo.
+- Organisation logo on UNICEF roles in the Experience timeline (`Experience.logo`).
+- "Supported with UNICEF" partner badge on UNICEF-supported programme cards (`Programme.partner`).
+- `profile.photo`, `profile.currentRole`, `profile.currentOrg`; `UNICEF_LOGO` / `PROFILE_PHOTO` constants; photo in JSON-LD `Person.image`.
+
+### Changed
+- Hero initials avatar replaced by the portrait.
+
 ## [1.0.0] — 2026-10-11
 
 ### Added

@@ -56,6 +56,10 @@ title + lede) · Section · Reveal · Marquee · Carousel · ThemeToggle · Copy
 Max content width `max-w-6xl`, gutters `px-4 sm:px-6`, section rhythm `py-20 md:py-28`. Experience timeline is a single
 left rail (`max-w-4xl`) at all breakpoints for readability.
 
+## Imagery
+- Portrait: transparent cut-out, soft drop-shadow, on a clay card filled with violet/peach radial gradients from tokens.
+- Logos: always on a white `OrgLogo` tile so brand colours are faithful in dark mode. Never recolour or distort the UNICEF emblem.
+
 ## Accessibility
 Focus ring = 3px primary outline. Skip-to-content link. Carousel has `aria-roledescription`, slide labels, pause control.
 Marquee duplicate is `aria-hidden`. Contrast of ink-on-pastel ≥ 4.5:1 in both themes.

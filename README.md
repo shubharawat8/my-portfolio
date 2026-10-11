@@ -36,7 +36,8 @@ All text lives in **[`src/data/profile.ts`](./src/data/profile.ts)** — experie
 education, certifications and contact details. Edit it and the whole site updates.
 
 - Show the phone number: set `showPhone: true` in `profile`.
-- Add a photo: put `public/profile.jpg` in place and swap the "SR" initials in `src/components/sections/Hero.tsx` for `next/image`.
+- Change the portrait: replace `public/images/shubha-rawat.webp` (transparent, background-removed cut-out).
+- Logos live in `public/logos/` — add `logo` to a job or `partner` to a programme in `profile.ts`.
 
 ## ☁️ Deploy to Vercel
 1. Go to [vercel.com/new](https://vercel.com/new) and import `shubharawat8/my-portfolio`.

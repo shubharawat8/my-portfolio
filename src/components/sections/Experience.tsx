@@ -1,6 +1,6 @@
 import { Briefcase, CalendarDays, CheckCircle2, MapPin } from "lucide-react";
 import { experience } from "@/data/profile";
-import { Chip, ClayCard, Reveal, Section, SectionHeading, accentBg } from "@/components/ui";
+import { Chip, ClayCard, OrgLogo, Reveal, Section, SectionHeading, accentBg } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 export function Experience() {
@@ -33,13 +33,18 @@ export function Experience() {
                     </Chip>
                     {job.current && <Chip accent="mint">Current role</Chip>}
                   </div>
-                  <h3 className="mt-4 font-display text-2xl font-semibold leading-tight">{job.role}</h3>
-                  <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-semibold text-muted">
-                    <span className="text-primary">{job.organisation}</span>
-                    <span className="inline-flex items-center gap-1">
-                      <MapPin className="size-4" aria-hidden="true" /> {job.location}
-                    </span>
-                  </p>
+                  <div className="mt-4 flex items-start gap-4">
+                    {job.logo && <OrgLogo src={job.logo} name={job.organisation} size="md" />}
+                    <div className="min-w-0">
+                      <h3 className="font-display text-2xl font-semibold leading-tight">{job.role}</h3>
+                      <p className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm font-semibold text-muted">
+                        <span className="text-primary">{job.organisation}</span>
+                        <span className="inline-flex items-center gap-1">
+                          <MapPin className="size-4" aria-hidden="true" /> {job.location}
+                        </span>
+                      </p>
+                    </div>
+                  </div>
                   <p className="mt-4 text-pretty">{job.summary}</p>
                   <ul className="mt-4 space-y-2.5 text-sm text-muted">
                     {job.highlights.map((h) => (

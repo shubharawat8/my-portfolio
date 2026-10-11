@@ -34,6 +34,10 @@ import {
   Wheat,
 } from "lucide-react";
 
+/** Brand assets (served from /public). */
+export const UNICEF_LOGO = "/logos/unicef.png";
+export const PROFILE_PHOTO = "/images/shubha-rawat.webp";
+
 export type Accent = "violet" | "mint" | "peach" | "sky" | "rose" | "lemon";
 
 export interface Stat {
@@ -51,6 +55,8 @@ export interface Competency {
 export interface Experience {
   role: string;
   organisation: string;
+  /** Optional organisation logo path (from /public). */
+  logo?: string;
   location: string;
   period: string;
   current?: boolean;
@@ -66,6 +72,8 @@ export interface Programme {
   description: string;
   icon: LucideIcon;
   accent: Accent;
+  /** Partner organisation whose logo is shown on the card, e.g. UNICEF. */
+  partner?: { name: string; logo: string };
 }
 
 export interface FocusArea {
@@ -91,6 +99,9 @@ export interface Certification {
 export const profile = {
   name: "Shubha Rawat",
   firstName: "Shubha",
+  photo: PROFILE_PHOTO,
+  currentRole: "State Consultant — Child Nutrition",
+  currentOrg: "UNICEF Uttar Pradesh",
   title: "Senior Public Health & Nutrition Professional",
   tagline:
     "Turning nutrition policy into practice — so every mother and child, in every district, gets the care that the programme promised.",
@@ -157,6 +168,7 @@ export const competencies: Competency[] = [
 export const programmes: Programme[] = [
   {
     title: "MAA — Mothers' Absolute Affection",
+    partner: { name: "UNICEF", logo: UNICEF_LOGO },
     short: "MAA",
     description:
       "Technical leadership for state-wide breastfeeding promotion — early initiation within one hour of birth and exclusive breastfeeding for six months.",
@@ -165,6 +177,7 @@ export const programmes: Programme[] = [
   },
   {
     title: "IMSAM",
+    partner: { name: "UNICEF", logo: UNICEF_LOGO },
     short: "IMSAM",
     description:
       "Integrated Management of Severe Acute Malnutrition — linking community identification, facility care and follow-up into one continuum.",
@@ -173,6 +186,7 @@ export const programmes: Programme[] = [
   },
   {
     title: "Nutrition Rehabilitation Centres",
+    partner: { name: "UNICEF", logo: UNICEF_LOGO },
     short: "NRC",
     description:
       "Establishing and strengthening NRCs with training, quality standards and progress tracking for facility-based SAM care.",
@@ -181,6 +195,7 @@ export const programmes: Programme[] = [
   },
   {
     title: "Infant & Young Child Feeding",
+    partner: { name: "UNICEF", logo: UNICEF_LOGO },
     short: "IYCF",
     description:
       "Complementary feeding and IYCF counselling — including state-level 3-in-1 training for breastfeeding counsellors.",
@@ -189,6 +204,7 @@ export const programmes: Programme[] = [
   },
   {
     title: "ICDS & Poshan Abhiyaan",
+    partner: { name: "UNICEF", logo: UNICEF_LOGO },
     short: "POSHAN",
     description:
       "Annual physical & budgetary plans, training calendars and supplementary-nutrition strategy with the Poshan Abhiyaan Secretariat.",
@@ -205,6 +221,7 @@ export const programmes: Programme[] = [
   },
   {
     title: "First 1,000 Days & Suposhan",
+    partner: { name: "UNICEF", logo: UNICEF_LOGO },
     short: "1,000 Days",
     description:
       "Supporting Madhya Pradesh's restructured ICDS PIP, Suposhan and strategies focused on the critical first 1,000 days.",
@@ -213,6 +230,7 @@ export const programmes: Programme[] = [
   },
   {
     title: "Bal Arogya evam Poshan Mission",
+    partner: { name: "UNICEF", logo: UNICEF_LOGO },
     short: "ABVBAPM",
     description:
       "Techno-managerial support at district and block levels for the Atal Bihari Vajpayee Bal Arogya evam Poshan Mission.",
@@ -225,6 +243,7 @@ export const experience: Experience[] = [
   {
     role: "State Consultant — Child Nutrition",
     organisation: "UNICEF",
+    logo: UNICEF_LOGO,
     location: "Uttar Pradesh",
     period: "Jun 2024 — Present",
     current: true,
@@ -242,6 +261,7 @@ export const experience: Experience[] = [
   {
     role: "State ICDS Consultant",
     organisation: "UNICEF",
+    logo: UNICEF_LOGO,
     location: "Uttar Pradesh",
     period: "Jul 2022 — May 2024",
     summary:
@@ -288,6 +308,7 @@ export const experience: Experience[] = [
   {
     role: "Divisional Nutrition Coordinator",
     organisation: "UNICEF",
+    logo: UNICEF_LOGO,
     location: "Madhya Pradesh",
     period: "Apr 2014 — Jan 2019",
     summary:
@@ -303,6 +324,7 @@ export const experience: Experience[] = [
   {
     role: "District Nutrition Coordinator",
     organisation: "UNICEF",
+    logo: UNICEF_LOGO,
     location: "Madhya Pradesh",
     period: "May 2012 — Mar 2014",
     summary: "Techno-managerial support for district malnutrition strategy and facility-based SAM care.",

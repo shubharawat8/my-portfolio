@@ -17,6 +17,7 @@ const personJsonLd = {
   "@type": "Person",
   name: profile.name,
   jobTitle: profile.title,
+  image: profile.photo,
   email: `mailto:${profile.email}`,
   address: { "@type": "PostalAddress", addressLocality: "Lucknow", addressRegion: "Uttar Pradesh", addressCountry: "IN" },
   worksFor: { "@type": "Organization", name: "UNICEF" },

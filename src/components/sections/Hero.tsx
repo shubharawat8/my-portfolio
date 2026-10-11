@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { ArrowRight, Baby, HeartPulse, Mail, MapPin, Sparkles, Wheat } from "lucide-react";
-import { profile } from "@/data/profile";
-import { ClayButton, Chip, IconBubble } from "@/components/ui";
+import { UNICEF_LOGO, profile } from "@/data/profile";
+import { ClayButton, Chip, IconBubble, OrgLogo } from "@/components/ui";
 
 export function Hero() {
   return (
@@ -30,24 +31,38 @@ export function Hero() {
           </p>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[17rem] sm:max-w-sm">
-          <div className="clay relative aspect-square rounded-[3rem] bg-surface p-8">
-            <div className="clay-inset flex size-full flex-col items-center justify-center rounded-[2.25rem] text-center">
-              <span className="clay-sm inline-flex size-32 items-center justify-center rounded-full bg-primary font-display text-5xl font-semibold text-on-primary sm:size-36">
-                SR
-              </span>
-              <p className="mt-6 font-display text-2xl font-semibold">{profile.name}</p>
-              <p className="mt-1 text-sm font-semibold text-muted">UNICEF · NHM · AIIMS</p>
-            </div>
+        {/* Portrait: background-removed cut-out whose head rises above the clay card */}
+        <div className="relative mx-auto aspect-[4/5] w-full max-w-[19rem] sm:max-w-sm">
+          <div
+            className="clay absolute inset-x-0 bottom-0 top-[18%] rounded-[3rem] bg-[radial-gradient(circle_at_25%_20%,var(--violet),transparent_60%),radial-gradient(circle_at_85%_85%,var(--peach),transparent_55%)]"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 [clip-path:inset(-20%_0_0_0_round_0_0_3rem_3rem)]">
+            <Image
+              src={profile.photo}
+              alt={`Portrait of ${profile.name}`}
+              fill
+              priority
+              sizes="(min-width: 1024px) 384px, (min-width: 640px) 384px, 304px"
+              className="object-contain object-bottom drop-shadow-[0_18px_24px_rgba(40,30,90,0.25)]"
+            />
           </div>
 
-          <IconBubble icon={Baby} accent="rose" size="lg" className="absolute -left-4 top-6 sm:-left-6 animate-float" />
-          <IconBubble icon={Wheat} accent="lemon" size="md" className="absolute -right-4 top-1/3 animate-float [animation-delay:-2s]" />
-          <IconBubble icon={HeartPulse} accent="mint" size="lg" className="absolute -bottom-6 left-1/4 animate-float [animation-delay:-4s]" />
+          <IconBubble icon={Baby} accent="rose" size="md" className="absolute -left-5 top-[22%] animate-float sm:-left-8" />
+          <IconBubble icon={Wheat} accent="lemon" size="sm" className="absolute -right-3 top-[30%] animate-float [animation-delay:-2s] sm:-right-6" />
+          <IconBubble icon={HeartPulse} accent="mint" size="md" className="absolute -right-4 bottom-[26%] animate-float [animation-delay:-4s] sm:-right-8" />
+
+          <div className="clay absolute -bottom-6 left-1/2 flex w-[92%] -translate-x-1/2 items-center gap-3 rounded-full py-2 pl-2 pr-5">
+            <OrgLogo src={UNICEF_LOGO} name="UNICEF" size="sm" className="rounded-full" />
+            <div className="min-w-0 leading-tight">
+              <p className="text-[13px] font-bold sm:text-sm">{profile.currentRole}</p>
+              <p className="truncate text-xs font-semibold text-muted">{profile.currentOrg}</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <ul className="mx-auto mt-16 flex max-w-6xl flex-wrap justify-center gap-3" aria-label="Areas of expertise">
+      <ul className="mx-auto mt-20 flex max-w-6xl flex-wrap justify-center gap-3" aria-label="Areas of expertise">
         {profile.keywords.map((keyword) => (
           <li key={keyword}>
             <Chip>{keyword}</Chip>
